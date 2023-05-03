@@ -1,4 +1,4 @@
-
+import 'package:bukuing/screen/signin.dart';
 import 'package:bukuing/screen/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -124,6 +124,7 @@ class _StartingPage2WidgetState extends State<StartingPage2Widget> {
                       ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignInWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               primary: const Color(0xFFF7D46E), // Button background color

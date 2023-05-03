@@ -1,3 +1,4 @@
+import 'package:bukuing/screen/signin.dart';
 import 'package:flutter/material.dart';
 
 import '../model/sign_up_model.dart';
@@ -237,29 +238,64 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 ?.call(context, value),
                           ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFF7D46E), // Button background color
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16), // Button padding
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8), // Button border radius
+                        Container(
+                          margin: const EdgeInsets.only(top: 16),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              print('Button pressed ...');
+                              
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16), // Button padding
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8), // Button border radius
+                              ),
+                              elevation: 0, // Button elevation
+                              side: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
                             ),
-                            elevation: 0, // Button elevation
-                            side: const BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
+                            child: const Text(
+                              'Sign Up',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0, // Button text font size
+                                color: Colors.black, // Button text color
+                              ),
                             ),
                           ),
-                          child: const Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0, // Button text font size
-                              color: Colors.black, // Button text color
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 16),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              print('Button pressed ...');
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignInWidget()));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                              // Button padding
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8), // Button border radius
+                              ),
+                              elevation: 0, // Button elevation
+                              side: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                            ),
+                            child: const Text(
+                              'Sign In',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0, // Button text font size
+                                color: Colors.black, // Button text color
+                              ),
                             ),
                           ),
                         ),
