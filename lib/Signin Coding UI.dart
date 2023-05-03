@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -80,12 +79,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Username',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              hintStyle: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -117,12 +114,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                               filled: true,
                               fillColor: Color(0xAEFFFFFF),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
@@ -136,12 +131,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Password',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              hintStyle: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -173,12 +166,10 @@ class _SignInWidgetState extends State<SignInWidget> {
                               filled: true,
                               fillColor: Color(0xAEFFFFFF),
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
@@ -195,13 +186,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                             iconPadding:
                                 EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             color: Color(0xFFF7D46E),
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            textStyle: TextStyle(
+                              fontFamily: 'Montserrat',
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,
@@ -230,13 +219,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                               iconPadding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               color: Colors.transparent,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                  ),
+                              textStyle: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                decoration: TextDecoration.underline,
+                              ),
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
