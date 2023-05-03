@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../model/sign_up_model.dart';
@@ -47,11 +46,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 1,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Stack(
               children: [
                 Image.asset(
-                  'assets/images/Custom.jpg',
+                  'images/Custom.jpg',
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 1,
                   fit: BoxFit.cover,
@@ -60,9 +59,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                       child: Image.asset(
-                        'assets/images/logo-removebg-preview.png',
+                        'images/logo-removebg-preview.png',
                         width: 240,
                         height: 240,
                         fit: BoxFit.cover,
@@ -73,52 +72,52 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       children: [
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
+                              const EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
                           child: TextFormField(
                             controller: _model.textController1,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Email',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
-                              fontSize: 14,
+                              fontSize: 16,
                               // Add any other properties you need
                               ),
 
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               filled: true,
-                              fillColor: Color(0xAEFFFFFF),
+                              fillColor: const Color(0xAEFFFFFF),
                             ),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
@@ -130,52 +129,52 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
+                              const EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
                           child: TextFormField(
                             controller: _model.textController2,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Username',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: Colors.black,
+                              fontSize: 16,
+                              
                             ),
 
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               filled: true,
-                              fillColor: Color(0xAEFFFFFF),
+                              fillColor: const Color(0xAEFFFFFF),
                             ),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0, 
@@ -186,50 +185,50 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
+                              const EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
                           child: TextFormField(
                             controller: _model.textController3,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Password',
-                              hintStyle: TextStyle(
+                              hintStyle: const TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16.0,
+                                fontSize: 16,
                               ),
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x00000000),
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               filled: true,
-                              fillColor: Color(0xAEFFFFFF),
+                              fillColor: const Color(0xAEFFFFFF),
                             ),
-                            style: TextStyle(
+                            style: const TextStyle(
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16.0, 
@@ -243,18 +242,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             print('Button pressed ...');
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFF7D46E), // Button background color
-                            padding: EdgeInsets.symmetric(horizontal: 16), // Button padding
+                            primary: const Color(0xFFF7D46E), // Button background color
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16), // Button padding
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8), // Button border radius
                             ),
                             elevation: 0, // Button elevation
-                            side: BorderSide(
+                            side: const BorderSide(
                               color: Colors.transparent,
                               width: 1,
                             ),
                           ),
-                          child: Text(
+                          child: const Text(
                             'Sign Up',
                             style: TextStyle(
                               fontFamily: 'Montserrat',
