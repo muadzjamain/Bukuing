@@ -1,9 +1,4 @@
-
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-
-import 'sign_up_model.dart';
+import 'package:flutter_flow/flutter_flow.dart';
 export 'sign_up_model.dart';
 
 class SignUpWidget extends StatefulWidget {
@@ -74,7 +69,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       children: [
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
+                          EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
                           child: TextFormField(
                             controller: _model.textController1,
                             autofocus: true,
@@ -84,9 +79,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -121,16 +116,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
                             validator: _model.textController1Validator
                                 .asValidator(context),
                           ),
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
+                          EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
                           child: TextFormField(
                             controller: _model.textController2,
                             autofocus: true,
@@ -140,9 +135,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -177,16 +172,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
+                          EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
                           child: TextFormField(
                             controller: _model.textController3,
                             autofocus: true,
@@ -196,9 +191,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -233,9 +228,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                            ),
                             validator: _model.textController3Validator
                                 .asValidator(context),
                           ),
@@ -250,15 +245,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             height: 40,
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             iconPadding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             color: Color(0xFFF7D46E),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                             borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,
