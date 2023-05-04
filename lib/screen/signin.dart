@@ -1,5 +1,6 @@
 import 'package:bukuing/screen/forgot.dart';
 import 'package:bukuing/screen/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../model/sign_in_model.dart';
@@ -79,7 +80,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              hintText: 'Username',
+                              hintText: 'Email',
                               hintStyle: TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
@@ -185,6 +186,12 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              FirebaseAuth.instance.signInWithEmailAndPassword(email: _model.textController1!.text,
+                                  password: _model.textController2!.text)
+                                  .then((value){
+                                print("login successful");
+                                //Navigator.push(context,MaterialPageRoute(builder: (context) => const Homepage()));
+                              });
                               
                             },
                             style: ElevatedButton.styleFrom(

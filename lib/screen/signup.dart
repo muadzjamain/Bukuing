@@ -1,4 +1,5 @@
 import 'package:bukuing/screen/signin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../model/sign_up_model.dart';
@@ -60,7 +61,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                       child: Image.asset(
                         'images/logo-removebg-preview.png',
                         width: 240,
@@ -72,8 +74,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              50, 50, 50, 0),
                           child: TextFormField(
                             controller: _model.textController1,
                             autofocus: true,
@@ -81,12 +83,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             decoration: InputDecoration(
                               hintText: 'Email',
                               hintStyle: const TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              // Add any other properties you need
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                // Add any other properties you need
                               ),
-
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: const BorderSide(
                                   color: Color(0x00000000),
@@ -123,14 +124,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
-
-                            validator: (value) => _model.textController1Validator
+                            validator: (value) => _model
+                                .textController1Validator
                                 ?.call(context, value),
                           ),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(50, 20, 50, 0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              50, 20, 50, 0),
                           child: TextFormField(
                             controller: _model.textController2,
                             autofocus: true,
@@ -138,12 +139,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             decoration: InputDecoration(
                               hintText: 'Username',
                               hintStyle: const TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              
-                            ),
-
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: const BorderSide(
                                   color: Color(0x00000000),
@@ -178,15 +177,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
-                              fontSize: 16.0, 
+                              fontSize: 16.0,
                             ),
-                            validator: (value) => _model.textController2Validator
+                            validator: (value) => _model
+                                .textController2Validator
                                 ?.call(context, value),
                           ),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              50, 20, 50, 20),
                           child: TextFormField(
                             controller: _model.textController3,
                             autofocus: true,
@@ -230,11 +230,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               fillColor: const Color(0xAEFFFFFF),
                             ),
                             style: const TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16.0, 
-                                  ),
-                            validator: (value) => _model.textController3Validator
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                            validator: (value) => _model
+                                .textController3Validator
                                 ?.call(context, value),
                           ),
                         ),
@@ -242,14 +243,30 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           margin: const EdgeInsets.only(top: 16),
                           child: ElevatedButton(
                             onPressed: () {
-                              print('Button pressed ...');
-                              
+                              print('Button pressed ...'); //Muadz
+                              FirebaseAuth.instance
+                                  .createUserWithEmailAndPassword(
+                                email: _model.textController1!.text,
+                                password: _model.textController2!.text,
+                              )
+                                  .then((value) {
+                                print("create New Account");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignInWidget()));
+                              });
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color(0xFFF7D46E), // Button background color
-                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16), // Button padding
+                              primary: const Color(
+                                  0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 16), // Button padding
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8), // Button border radius
+                                borderRadius: BorderRadius.circular(
+                                    8), // Button border radius
                               ),
                               elevation: 0, // Button elevation
                               side: const BorderSide(
@@ -273,14 +290,21 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignInWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignInWidget()));
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color(0xFFF7D46E), // Button background color
-                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                              primary: const Color(
+                                  0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 16),
                               // Button padding
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8), // Button border radius
+                                borderRadius: BorderRadius.circular(
+                                    8), // Button border radius
                               ),
                               elevation: 0, // Button elevation
                               side: const BorderSide(
@@ -299,7 +323,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   ],
