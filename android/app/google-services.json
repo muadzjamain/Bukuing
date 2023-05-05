@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661451733735",
+    "project_id": "bukuing-application",
+    "storage_bucket": "bukuing-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661451733735:android:4a33e0891f09e94b690042",
+        "android_client_info": {
+          "package_name": "com.example.bukuing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661451733735-roft2tvf5oq6kngvtlp67f93m862esmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvaW7ZfijdF2_NMXmUAa86_hmg9th0fQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661451733735-roft2tvf5oq6kngvtlp67f93m862esmu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
