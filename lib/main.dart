@@ -1,3 +1,4 @@
+import 'package:bukuing/screen/homepage.dart';
 import 'package:bukuing/screen/signup.dart';
 import 'package:bukuing/screen/startingpage.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-    home: StartingPage2Widget(),
+    home: HomePageWidget(),
       );
   }
 }
