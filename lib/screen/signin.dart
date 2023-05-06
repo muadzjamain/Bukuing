@@ -1,3 +1,4 @@
+import 'package:bukuing/screen/homepage.dart';
 import 'package:bukuing/screen/forgot.dart';
 import 'package:bukuing/screen/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -190,7 +191,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   password: _model.textController2!.text)
                                   .then((value){
                                 print("login successful");
-                                //Navigator.push(context,MaterialPageRoute(builder: (context) => const Homepage()));
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageWidget()));
                               });
                               
                             },
