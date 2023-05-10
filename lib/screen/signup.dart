@@ -15,6 +15,10 @@ class SignUpWidget extends StatefulWidget {
 class _SignUpWidgetState extends State<SignUpWidget> {
   late SignUpModel _model;
 
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+  TextEditingController textController3 = TextEditingController();
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
@@ -77,7 +81,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               50, 50, 50, 0),
                           child: TextFormField(
-                            controller: _model.textController1,
+                            controller: textController1,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -133,7 +137,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               50, 20, 50, 0),
                           child: TextFormField(
-                            controller: _model.textController2,
+                            controller: textController2,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -188,7 +192,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               50, 20, 50, 20),
                           child: TextFormField(
-                            controller: _model.textController3,
+                            controller: textController3,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -244,10 +248,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...'); //Muadz
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignInWidget()));
                               FirebaseAuth.instance
                                   .createUserWithEmailAndPassword(
-                                email: _model.textController1!.text,
-                                password: _model.textController2!.text,
+                                email: textController1.text,
+                                password: textController2.text,
                               )
                                   .then((value) {
                                 print("create New Account");

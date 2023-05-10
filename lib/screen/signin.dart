@@ -17,6 +17,9 @@ class SignInWidget extends StatefulWidget {
 class _SignInWidgetState extends State<SignInWidget> {
   late SignInModel _model;
 
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
@@ -77,16 +80,16 @@ class _SignInWidgetState extends State<SignInWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(50, 50, 50, 0),
                           child: TextFormField(
-                            controller: _model.textController1,
+                            controller: textController1,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Email',
                               hintStyle: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -123,7 +126,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
-                            validator: (value) => _model.textController1Validator
+                            validator: (value) => _model
+                                .textController1Validator
                                 ?.call(context, value),
                           ),
                         ),
@@ -131,7 +135,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           padding:
                               EdgeInsetsDirectional.fromSTEB(50, 20, 50, 20),
                           child: TextFormField(
-                            controller: _model.textController2,
+                            controller: textController2,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -140,8 +144,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
-                                ),
-
+                              ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
@@ -178,8 +181,9 @@ class _SignInWidgetState extends State<SignInWidget> {
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
-                            validator: (value) => _model.textController2Validator
-                                ?.call(context,value),
+                            validator: (value) => _model
+                                .textController2Validator
+                                ?.call(context, value),
                           ),
                         ),
                         Container(
@@ -187,19 +191,33 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              FirebaseAuth.instance.signInWithEmailAndPassword(email: _model.textController1!.text,
-                                  password: _model.textController2!.text)
-                                  .then((value){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const HomePageWidget()));
+                              FirebaseAuth.instance
+                                  .signInWithEmailAndPassword(
+                                      email: textController1.text,
+                                      password: textController2.text)
+                                  .then((value) {
                                 print("login successful");
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageWidget()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HomePageWidget()));
                               });
-                              
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color(0xFFF7D46E), // Button background color
-                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16), // Button padding
+                              primary: const Color(
+                                  0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 16), // Button padding
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8), // Button border radius
+                                borderRadius: BorderRadius.circular(
+                                    8), // Button border radius
                               ),
                               elevation: 0, // Button elevation
                               side: const BorderSide(
@@ -223,14 +241,21 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignUpWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignUpWidget()));
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: const Color(0xFFF7D46E), // Button background color
-                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                              primary: const Color(
+                                  0xFFF7D46E), // Button background color
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 16),
                               // Button padding
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8), // Button border radius
+                                borderRadius: BorderRadius.circular(
+                                    8), // Button border radius
                               ),
                               elevation: 0, // Button elevation
                               side: const BorderSide(
@@ -249,7 +274,6 @@ class _SignInWidgetState extends State<SignInWidget> {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                     Padding(
@@ -260,22 +284,26 @@ class _SignInWidgetState extends State<SignInWidget> {
                         children: [
                           TextButton(
                             onPressed: () {
-                                print('Button pressed ...');
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassWidget()));
+                              print('Button pressed ...');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ForgotPassWidget()));
                             },
                             child: Text(
-                                'Forgot Password?',
-                                style: TextStyle(
+                              'Forgot Password?',
+                              style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
                                 decoration: TextDecoration.underline,
-                                ),
+                              ),
                             ),
                             style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                                minimumSize: Size(150, 20),
+                              padding: EdgeInsets.zero,
+                              minimumSize: Size(150, 20),
                             ),
-                            ),
+                          ),
                         ],
                       ),
                     ),
