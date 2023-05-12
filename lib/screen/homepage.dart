@@ -226,7 +226,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       tag: 'imageTag4',
                                                       child: GestureDetector(
                                                         child: Image.asset(
-                                                          '/images/event3.jpeg',
+                                                          'images/event3.jpeg',
                                                           fit: BoxFit.contain,
                                                         ),
                                                         onTap: () {
@@ -236,7 +236,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               builder: (_) => Scaffold(
                                                                 body: Center(
                                                                   child: Image.asset(
-                                                                    '/images/event3.jpeg',
+                                                                    'images/event3.jpeg',
                                                                     fit: BoxFit.contain,
                                                                   ),
                                                                 ),
@@ -249,13 +249,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
                                                ),
                                              );
-                                           await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
+                                           await Navigator.push(context,PageTransition(
+                                                        type: PageTransitionType.fade,
                                                         child:
-                                                            
                                                           Image.asset(
                                                             'images/event3.jpeg',
                                                             fit: BoxFit.contain,
@@ -264,7 +260,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                            //tag: 'imageTag2',
                                                            //useHeroAnimation:
                                                                //true,
-
                                                       ),
                                                     );
                                                   },

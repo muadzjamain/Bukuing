@@ -1,3 +1,8 @@
+import 'package:bukuing/screen/contact.dart';
+import 'package:bukuing/screen/profile.dart';
+import 'package:bukuing/screen/settings.dart';
+import 'package:bukuing/screen/homepage.dart';
+import 'package:bukuing/screen/bookinghistory.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -101,6 +106,7 @@ class _AppDrawer extends State<AppDrawer> {
                     child: ElevatedButton(
                       onPressed: () {
                         print('Button pressed ...');
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageWidget()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0x003474E0),
@@ -158,6 +164,7 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => const BookingHistoryWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
@@ -211,6 +218,7 @@ class _AppDrawer extends State<AppDrawer> {
                     child: ElevatedButton(
                       onPressed: () {
                         print('Button pressed ...');
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfileWidget()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0x003474E0),
@@ -267,6 +275,7 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => const SettingsWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
@@ -315,53 +324,6 @@ class _AppDrawer extends State<AppDrawer> {
                         const Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Icon(
-                            Icons.people_outline,
-                            color: Colors.white,
-                            size: 35,
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                              const EdgeInsetsDirectional.fromSTEB(14, 0, 0, 0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0x003474E0),
-                              elevation: 2,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              minimumSize: const Size(99, 40),
-                            ),
-                            child: const Text('About Us',
-                                style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                )),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                          child: Icon(
                             Icons.call_outlined,
                             color: Colors.white,
                             size: 35,
@@ -373,6 +335,7 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => const ContactUsWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
