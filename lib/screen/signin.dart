@@ -191,11 +191,11 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const HomePageWidget()));
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //             const HomePageWidget()));
                               FirebaseAuth.instance
                                   .signInWithEmailAndPassword(
                                       email: textController1.text,
@@ -207,6 +207,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             const HomePageWidget()));
+                              }).onError((error, stackTrace) {
+                                print("Error ${error.toString()}");
                               });
                             },
                             style: ElevatedButton.styleFrom(

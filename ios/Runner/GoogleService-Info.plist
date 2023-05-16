@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>661451733735-iqdrgfdtp81t2trn2517qai5bl6p00sc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.661451733735-iqdrgfdtp81t2trn2517qai5bl6p00sc</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>661451733735-fj9jkqgelg7vnhjhfr08aigs43m7jun2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAVb2q4f7Jv6kXKfZdfWC_XfxS6DbzbIj8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>661451733735</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.bukuing</string>
+	<key>PROJECT_ID</key>
+	<string>bukuing-application</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bukuing-application.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:661451733735:ios:c029010c67e151eb690042</string>
+</dict>
+</plist>

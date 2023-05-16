@@ -248,15 +248,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...'); //Muadz
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SignInWidget()));
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) =>
+                              //             const SignInWidget()));
                               FirebaseAuth.instance
                                   .createUserWithEmailAndPassword(
                                 email: textController1.text,
-                                password: textController2.text,
+                                password: textController3.text,
                               )
                                   .then((value) {
                                 print("create New Account");
@@ -265,6 +265,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             const SignInWidget()));
+                              }).onError((error, stackTrace) {
+                                print("Error ${error.toString()}");
                               });
                             },
                             style: ElevatedButton.styleFrom(

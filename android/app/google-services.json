@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "661451733735-fj9jkqgelg7vnhjhfr08aigs43m7jun2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bukuing",
+            "certificate_hash": "5721e4119b3e8de877bdcf6e350f4da06466a2bd"
+          }
+        },
+        {
           "client_id": "661451733735-roft2tvf5oq6kngvtlp67f93m862esmu.apps.googleusercontent.com",
           "client_type": 3
         }

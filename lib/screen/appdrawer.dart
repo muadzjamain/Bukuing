@@ -3,6 +3,8 @@ import 'package:bukuing/screen/profile.dart';
 import 'package:bukuing/screen/settings.dart';
 import 'package:bukuing/screen/homepage.dart';
 import 'package:bukuing/screen/bookinghistory.dart';
+import 'package:bukuing/screen/signin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -106,7 +108,10 @@ class _AppDrawer extends State<AppDrawer> {
                     child: ElevatedButton(
                       onPressed: () {
                         print('Button pressed ...');
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageWidget()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePageWidget()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0x003474E0),
@@ -164,7 +169,11 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => const BookingHistoryWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const BookingHistoryWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
@@ -218,7 +227,10 @@ class _AppDrawer extends State<AppDrawer> {
                     child: ElevatedButton(
                       onPressed: () {
                         print('Button pressed ...');
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const ProfileWidget()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ProfileWidget()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0x003474E0),
@@ -275,7 +287,11 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => const SettingsWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SettingsWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
@@ -335,7 +351,11 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => const ContactUsWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ContactUsWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
@@ -383,6 +403,14 @@ class _AppDrawer extends State<AppDrawer> {
                           child: ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
+                              FirebaseAuth.instance.signOut().then((value) {
+                                print("Signed Out");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SignInWidget()));
+                              });
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),
