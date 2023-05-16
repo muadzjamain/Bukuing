@@ -1,7 +1,7 @@
 import 'package:bukuing/screen/signin.dart';
 import 'package:bukuing/screen/signup.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../model/forgot_pass_model.dart';
 export '../model/forgot_pass_model.dart';
@@ -14,6 +14,8 @@ class ForgotPassWidget extends StatefulWidget {
 }
 
 class _ForgotPassWidgetState extends State<ForgotPassWidget> {
+  late TextEditingController controller;
+  String email = '';
   late ForgotPassModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -22,6 +24,7 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
   @override
   void initState() {
     super.initState();
+    controller = TextEditingController();
     _model = ForgotPassModel();
     _model.initState(context);
   }
@@ -29,6 +32,7 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
   @override
   void dispose() {
     _model.dispose();
+    controller.dispose();
 
     _unfocusNode.dispose();
     super.dispose();
@@ -106,7 +110,6 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                             fontSize: 24,
                                             fontWeight: FontWeight.w500,
                                           ),
-
                                         ),
                                       ),
                                       Padding(
@@ -115,17 +118,34 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                         child: Text(
                                           'We\'ll send you a link to get back into your account',
                                           textAlign: TextAlign.center,
-                                          style: Theme.of(context).textTheme.bodyText2,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyText2,
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 20, 0, 20),
                                         child: ElevatedButton(
-                                          onPressed: () {
+                                          onPressed: () async {
+                                            final email = await openDialog();
+                                            if (email == null || email.isEmpty)
+                                              return;
+                                            await FirebaseAuth.instance
+                                                .sendPasswordResetEmail(
+                                                    email: email)
+                                                .then((value) {
+                                              print(
+                                                  "Reset Password Succesfully Sent");
+                                              Navigator.of(context).pop();
+                                            }).onError((error, stackTrace) {
+                                              print(
+                                                  "Error ${error.toString()}");
+                                            });
                                             print('Button pressed ...');
                                           },
-                                          child: Text('Sent login code',
+                                          child: Text(
+                                            'Sent login code',
                                             style: TextStyle(
                                               fontFamily: 'Montserrat',
                                               color: Colors.black,
@@ -134,26 +154,38 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                             ),
                                           ),
                                           style: ButtonStyle(
-                                            backgroundColor: MaterialStateProperty.all(Color(0xFFF7D46E)),
-                                            padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(0, 0, 0, 0)),
-                                            minimumSize: MaterialStateProperty.all(Size(180, 50)),
-                                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(8),
+                                            backgroundColor:
+                                                MaterialStateProperty.all(
+                                                    Color(0xFFF7D46E)),
+                                            padding: MaterialStateProperty.all(
+                                                EdgeInsets.fromLTRB(
+                                                    0, 0, 0, 0)),
+                                            minimumSize:
+                                                MaterialStateProperty.all(
+                                                    Size(180, 50)),
+                                            shape: MaterialStateProperty.all(
+                                                RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             )),
-                                            side: MaterialStateProperty.all(BorderSide(
+                                            side: MaterialStateProperty.all(
+                                                BorderSide(
                                               color: Colors.transparent,
                                               width: 1,
                                             )),
                                           ),
                                         ),
-
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(bottom: 20),
                                         child: ElevatedButton(
                                           onPressed: () {
                                             print('Button pressed ...');
-                                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignUpWidget()));
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const SignUpWidget()));
                                           },
                                           child: Text(
                                             'Create an account',
@@ -162,24 +194,33 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
                                               color: Colors.black,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 16,
-                                              decoration: TextDecoration.underline,
+                                              decoration:
+                                                  TextDecoration.underline,
                                             ),
                                           ),
                                           style: ButtonStyle(
-                                            backgroundColor: MaterialStateProperty.all(Colors.transparent),
-                                            padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(0, 0, 0, 0)),
-                                            minimumSize: MaterialStateProperty.all(Size(180, 50)),
-                                            shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(8),
+                                            backgroundColor:
+                                                MaterialStateProperty.all(
+                                                    Colors.transparent),
+                                            padding: MaterialStateProperty.all(
+                                                EdgeInsets.fromLTRB(
+                                                    0, 0, 0, 0)),
+                                            minimumSize:
+                                                MaterialStateProperty.all(
+                                                    Size(180, 50)),
+                                            shape: MaterialStateProperty.all(
+                                                RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             )),
-                                            side: MaterialStateProperty.all(BorderSide(
+                                            side: MaterialStateProperty.all(
+                                                BorderSide(
                                               color: Colors.transparent,
                                               width: 1,
                                             )),
                                           ),
                                         ),
                                       ),
-
                                     ],
                                   ),
                                 ),
@@ -198,4 +239,24 @@ class _ForgotPassWidgetState extends State<ForgotPassWidget> {
       ),
     );
   }
+
+  Future<String?> openDialog() => showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text('Enter Your Email'),
+            content: TextField(
+              autofocus: true,
+              decoration: InputDecoration(hintText: 'Email'),
+              controller: controller,
+            ),
+            actions: [
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop(controller.text);
+                  controller.clear();
+                },
+              )
+            ],
+          ));
 }
