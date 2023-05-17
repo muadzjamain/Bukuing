@@ -194,7 +194,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           child: TextFormField(
                             controller: textController3,
                             autofocus: true,
-                            obscureText: false,
+                            obscureText: true,
                             decoration: InputDecoration(
                               hintText: 'Password',
                               hintStyle: const TextStyle(

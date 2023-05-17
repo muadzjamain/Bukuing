@@ -34,5 +34,3 @@ class _AppState extends State<StatefulWidget> {
     return MaterialApp(home: StartingPage2Widget());
   }
 }
-
-//      home: StartingPage2Widget(),

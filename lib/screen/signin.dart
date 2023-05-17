@@ -137,7 +137,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: TextFormField(
                             controller: textController2,
                             autofocus: true,
-                            obscureText: false,
+                            obscureText: true,
                             decoration: InputDecoration(
                               hintText: 'Password',
                               hintStyle: TextStyle(
