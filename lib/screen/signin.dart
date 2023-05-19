@@ -19,6 +19,7 @@ class _SignInWidgetState extends State<SignInWidget> {
 
   TextEditingController textController1 = TextEditingController();
   TextEditingController textController2 = TextEditingController();
+  late bool _passwordVisible;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -28,6 +29,7 @@ class _SignInWidgetState extends State<SignInWidget> {
     super.initState();
     _model = SignInModel();
     _model.initState(context);
+    _passwordVisible = false;
 
     _model.textController1 ??= TextEditingController();
     _model.textController2 ??= TextEditingController();
@@ -137,9 +139,24 @@ class _SignInWidgetState extends State<SignInWidget> {
                           child: TextFormField(
                             controller: textController2,
                             autofocus: true,
-                            obscureText: true,
+                            obscureText: !_passwordVisible,
                             decoration: InputDecoration(
                               hintText: 'Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  // Based on passwordVisible state choose the icon
+                                  _passwordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: Theme.of(context).primaryColorDark,
+                                ),
+                                onPressed: () {
+                                  // Update the state i.e. toogle the state of passwordVisible variable
+                                  setState(() {
+                                    _passwordVisible = !_passwordVisible;
+                                  });
+                                },
+                              ),
                               hintStyle: TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.bold,
@@ -201,12 +218,20 @@ class _SignInWidgetState extends State<SignInWidget> {
                                       email: textController1.text,
                                       password: textController2.text)
                                   .then((value) {
+                                if (value.user == null) return;
+                                print(value.user!.emailVerified);
+                                if (value.user!.emailVerified) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HomePageWidget()));
+                                } else {
+                                  showAlertDialog(context);
+                                  value.user!.sendEmailVerification();
+                                }
+
                                 print("login successful");
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const HomePageWidget()));
                               }).onError((error, stackTrace) {
                                 print("Error ${error.toString()}");
                               });
@@ -318,4 +343,19 @@ class _SignInWidgetState extends State<SignInWidget> {
       ),
     );
   }
+
+  void showAlertDialog(BuildContext context) => showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            title: Text('Email Verification Required!'),
+            content: Text('Please Verify Your Email Before Log In'),
+            actions: [
+              TextButton(
+                child: Text('Send Verification'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ));
 }
