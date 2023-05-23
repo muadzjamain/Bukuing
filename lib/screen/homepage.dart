@@ -94,24 +94,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    await Navigator.push(
+                                                    /*  await Navigator.push(
                                                       context,
                                                       PageTransition(
                                                         type: PageTransitionType
                                                             .fade,
-                                                        child:
-                                                            
-                                                          Image.asset(
-                                                            'images/event1.jpeg',
-                                                            fit: BoxFit.contain,
-                                                          ),
-                                                           //allowRotation: false,
-                                                           //tag: 'imageTag2',
-                                                           //useHeroAnimation:
-                                                               //true,
-
+                                                        child: Image.asset(
+                                                          'images/event1.jpeg',
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                        //allowRotation: false,
+                                                        //tag: 'imageTag2',
+                                                        //useHeroAnimation:
+                                                        //true,
                                                       ),
-                                                    );
+                                                    ); */
                                                   },
                                                   child: Hero(
                                                     tag: 'imageTag2',
@@ -150,47 +147,42 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                             await Navigator.push(
-                                               context,
-                                               PageTransition(
-                                                 type: PageTransitionType.fade,
-                                                 child:
-                                                     Hero(
-                                                      tag: 'imageTag3',
-                                                      child: InteractiveViewer(
-                                                        child: Image.asset(
-                                                          'images/event2.png',
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                        boundaryMargin: EdgeInsets.all(20.0),
-                                                        maxScale: 5.0,
-                                                        minScale: 1.0,
-                                                        panEnabled: true,
-                                                        scaleEnabled: true,
-                                                      ),
+                                            /* await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: Hero(
+                                                  tag: 'imageTag3',
+                                                  child: InteractiveViewer(
+                                                    child: Image.asset(
+                                                      'images/event2.png',
+                                                      fit: BoxFit.contain,
                                                     ),
-
-                                               ),
-                                             );
-                                            await Navigator.push(
-                                                      context,
-                                                      PageTransition(
-                                                        type: PageTransitionType
-                                                            .fade,
-                                                        child:
-                                                            
-                                                          Image.asset(
-                                                            'images/event2.png',
-                                                            fit: BoxFit.contain,
-                                                          ),
-                                                           //allowRotation: false,
-                                                           //tag: 'imageTag2',
-                                                           //useHeroAnimation:
-                                                               //true,
-
-                                                      ),
-                                                    );
-                                                  },
+                                                    boundaryMargin:
+                                                        EdgeInsets.all(20.0),
+                                                    maxScale: 5.0,
+                                                    minScale: 1.0,
+                                                    panEnabled: true,
+                                                    scaleEnabled: true,
+                                                  ),
+                                                ),
+                                              ),
+                                            ); */
+                                            /*  await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: Image.asset(
+                                                  'images/event2.png',
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                //allowRotation: false,
+                                                //tag: 'imageTag2',
+                                                //useHeroAnimation:
+                                                //true,
+                                              ),
+                                            ); */
+                                          },
                                           child: Hero(
                                             tag: 'imageTag3',
                                             transitionOnUserGestures: true,
@@ -217,52 +209,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                             await Navigator.push(
-                                               context,
-                                               PageTransition(
-                                                 type: PageTransitionType.fade,
-                                                 child:
-                                                     Hero(
-                                                      tag: 'imageTag4',
-                                                      child: GestureDetector(
-                                                        child: Image.asset(
-                                                          'images/event3.jpeg',
-                                                          fit: BoxFit.contain,
-                                                        ),
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                              builder: (_) => Scaffold(
-                                                                body: Center(
-                                                                  child: Image.asset(
-                                                                    'images/event3.jpeg',
-                                                                    fit: BoxFit.contain,
-                                                                  ),
+                                            /*   await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                  type: PageTransitionType.fade,
+                                                  child: Hero(
+                                                    tag: 'imageTag4',
+                                                    child: GestureDetector(
+                                                      child: Image.asset(
+                                                        'images/event3.jpeg',
+                                                        fit: BoxFit.contain,
+                                                      ),
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (_) =>
+                                                                Scaffold(
+                                                              body: Center(
+                                                                child:
+                                                                    Image.asset(
+                                                                  'images/event3.jpeg',
+                                                                  fit: BoxFit
+                                                                      .contain,
                                                                 ),
                                                               ),
                                                             ),
-                                                          );
-                                                        },
-                                                      ),
-                                                    )
-
-                                               ),
-                                             );
-                                           await Navigator.push(context,PageTransition(
-                                                        type: PageTransitionType.fade,
-                                                        child:
-                                                          Image.asset(
-                                                            'images/event3.jpeg',
-                                                            fit: BoxFit.contain,
                                                           ),
-                                                           //allowRotation: false,
-                                                           //tag: 'imageTag2',
-                                                           //useHeroAnimation:
-                                                               //true,
-                                                      ),
-                                                    );
-                                                  },
+                                                        );
+                                                      },
+                                                    ),
+                                                  )),
+                                            );
+                                            await Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: Image.asset(
+                                                  'images/event3.jpeg',
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                //allowRotation: false,
+                                                //tag: 'imageTag2',
+                                                //useHeroAnimation:
+                                                //true,
+                                              ),
+                                            ); */
+                                          },
                                           child: Hero(
                                             tag: 'imageTag4',
                                             transitionOnUserGestures: true,
@@ -292,13 +285,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 25),
                                       child: SmoothPageIndicator(
-                                        controller: _model.pageViewController ??= PageController(initialPage: 0),
+                                        controller:
+                                            _model.pageViewController ??=
+                                                PageController(initialPage: 0),
                                         count: 3,
                                         axisDirection: Axis.horizontal,
                                         onDotClicked: (index) async {
-                                          await _model.pageViewController!.animateToPage(
+                                          await _model.pageViewController!
+                                              .animateToPage(
                                             index,
-                                            duration: Duration(milliseconds: 500),
+                                            duration:
+                                                Duration(milliseconds: 500),
                                             curve: Curves.ease,
                                           );
                                         },
@@ -307,7 +304,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           radius: 16,
                                           dotWidth: 10,
                                           dotHeight: 10,
-                                          dotColor: Theme.of(context).accentColor,
+                                          dotColor: Theme.of(context)
+                                              .colorScheme
+                                              .secondary,
                                           activeDotColor: Color(0xFFF7D46E),
                                           paintStyle: PaintingStyle.fill,
                                         ),
@@ -332,59 +331,71 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 InkWell(
                                   onTap: () {
                                     print('IconButton pressed ...');
-                                    Navigator.push(context,MaterialPageRoute(builder: (context) => const BadmintonPageWidget()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const BadmintonPageWidget()));
                                   },
                                   child: Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Stack(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Image.asset(
-                                            'images/badminton_court2.jpg',
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Stack(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 0, 15, 0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.asset(
+                                              'images/badminton_court2.jpg',
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              height: 100,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15, 0, 15, 0),
+                                          child: Container(
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width,
                                             height: 100,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 15, 0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          height: 100,
-                                          decoration: BoxDecoration(
-                                            color: Color(0x00FFFFFF),
-                                          ),
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0, 0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.stretch,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 0, 0),
-                                                  child: Text('Badminton',
-                                                    textAlign: TextAlign.start,
-                                                     style: TextStyle(
-                                                           fontFamily:
-                                                               'Montserrat',
-                                                           color: Colors.white,
-                                                           fontWeight:
-                                                               FontWeight.bold,
-                                                         ),
+                                            decoration: BoxDecoration(
+                                              color: Color(0x00FFFFFF),
+                                            ),
+                                            child: Align(
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.stretch,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                20, 0, 0, 0),
+                                                    child: Text(
+                                                      'Badminton',
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
