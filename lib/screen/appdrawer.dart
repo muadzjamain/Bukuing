@@ -6,6 +6,7 @@ import 'package:bukuing/screen/bookinghistory.dart';
 import 'package:bukuing/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -15,9 +16,16 @@ class AppDrawer extends StatefulWidget {
 }
 
 class _AppDrawer extends State<AppDrawer> {
+  String imageUrl = 'https://i.imgur.com/g9070k1.jpg';
+  String userEmail = 'skjcnsac@gmail.com';
+
   @override
   void initState() {
     super.initState();
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+    imageUrl = user.photoURL ?? imageUrl;
+    userEmail = user.email ?? userEmail;
   }
 
   @override
@@ -60,8 +68,8 @@ class _AppDrawer extends State<AppDrawer> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
-                            image: Image.asset(
-                              'images/dp1.jpg',
+                            image: Image.network(
+                              imageUrl,
                             ).image,
                             fit: BoxFit.cover,
                           ),
@@ -77,7 +85,7 @@ class _AppDrawer extends State<AppDrawer> {
                       ),
                     ),
                     Text(
-                      'awiecomeii@gmail.com',
+                      userEmail,
                       style: const TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
