@@ -2,7 +2,6 @@ import 'package:bukuing/screen/appdrawer.dart';
 import 'package:bukuing/screen/homepage.dart';
 import 'package:flutter/material.dart';
 
-
 import '../model/profile_model.dart';
 export '../model/profile_model.dart';
 
@@ -59,23 +58,23 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           title: Text(
             'Profile',
             style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
           actions: [],
           centerTitle: true,
           elevation: 4,
         ),
         body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/signinpage2.jpg"),
-            fit: BoxFit.cover,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/signinpage2.jpg"),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
           child: Stack(
             children: [
               Column(
@@ -152,30 +151,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Username :',
-                            style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Text(
-                              'Awieknd',
-                              style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ),
-                        ],
+                        children: [],
                       ),
                     ),
                     Padding(
@@ -186,11 +162,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           Text(
                             'Email          :',
                             style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           Padding(
                             padding:
@@ -198,11 +174,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             child: Text(
                               'awiecomeii@gmail.com',
                               style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                fontFamily: 'Montserrat',
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ],
@@ -216,11 +192,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           Text(
                             'Contact      :',
                             style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                           Padding(
                             padding:
@@ -228,11 +204,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             child: Text(
                               '0123456789',
                               style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                fontFamily: 'Montserrat',
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ],
