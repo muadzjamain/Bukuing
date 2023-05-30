@@ -77,14 +77,6 @@ class _AppDrawer extends State<AppDrawer> {
                       ),
                     ),
                     Text(
-                      'Awieknd',
-                      style: const TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.white,
-                        fontSize: 22,
-                      ),
-                    ),
-                    Text(
                       userEmail,
                       style: const TextStyle(
                         fontFamily: 'Montserrat',

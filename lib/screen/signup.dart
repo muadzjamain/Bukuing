@@ -135,61 +135,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              50, 20, 50, 0),
-                          child: TextFormField(
-                            controller: textController2,
-                            autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Username',
-                              hintStyle: const TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              filled: true,
-                              fillColor: const Color(0xAEFFFFFF),
-                            ),
-                            style: const TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
-                            ),
-                            validator: (value) => _model
-                                .textController2Validator
-                                ?.call(context, value),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
                               50, 20, 50, 20),
                           child: TextFormField(
                             controller: textController3,

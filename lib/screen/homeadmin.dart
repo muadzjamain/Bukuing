@@ -3,7 +3,6 @@ import 'package:bukuing/screen/appdrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../model/home_page_model.dart';
 export '../model/home_page_model.dart';
 

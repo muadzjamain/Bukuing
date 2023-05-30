@@ -204,36 +204,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Username :',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Text(
-                              'Awieknd',
-                              style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
