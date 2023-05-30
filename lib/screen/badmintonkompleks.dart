@@ -1,6 +1,7 @@
 import 'package:bukuing/screen/approve.dart';
 import 'package:bukuing/screen/decline.dart';
 import 'package:bukuing/screen/badminton.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,6 +18,10 @@ class BadmintonKompleksWidget extends StatefulWidget {
 
 class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
   late BadmintonKompleksModel _model;
+
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+  TextEditingController textController3 = TextEditingController();
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -38,16 +43,24 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
 
   Future<void> _saveBookingData() async {
     // Get the values from the text controllers
-    String date = _model.textController1!.text;
-    String startTime = _model.textController2!.text;
-    String endTime = _model.textController3!.text;
+    String date = textController1.text;
+    String startTime = textController2.text;
+    String endTime = textController3.text;
+
+    print('1 book firestore btn pressed...');
+
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+    print('1.5 book firestore btn pressed...');
 
     try {
       // Create a Firestore instance
       final firestore = FirebaseFirestore.instance;
+      print('2 book firestore btn pressed...');
 
       // Create a new document in a 'bookings' collection and set the data
       await firestore.collection('bookings').add({
+        'uid': user.uid,
         'date': date,
         'start_time': startTime,
         'end_time': endTime,
@@ -59,6 +72,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
       );
     } catch (e) {
       // Show an error message to the user
+      print(e);
       _scaffoldKey.currentState?.showSnackBar(
         SnackBar(content: Text('Failed to save booking data')),
       );
@@ -225,7 +239,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
                               child: TextFormField(
-                                controller: _model.textController1,
+                                controller: textController1,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: const InputDecoration(
@@ -321,7 +335,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(10, 0, 13, 0),
                               child: TextFormField(
-                                controller: _model.textController2,
+                                controller: textController2,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -390,7 +404,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                               child: TextFormField(
-                                controller: _model.textController3,
+                                controller: textController3,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(

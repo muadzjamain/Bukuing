@@ -23,7 +23,7 @@ class ProfileWidget extends StatefulWidget {
 class _ProfileWidgetState extends State<ProfileWidget> {
   late ProfileModel _model;
   String imageUrl = 'https://i.imgur.com/g9070k1.jpg';
-  String userEmail = 'skjcnsac@gmail.com';
+  String userEmail = 'awie666@gmail.com';
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();

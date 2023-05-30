@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "661451733735",
+    "firebase_url": "https://bukuing-application-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "bukuing-application",
     "storage_bucket": "bukuing-application.appspot.com"
   },
@@ -37,6 +38,13 @@
             {
               "client_id": "661451733735-roft2tvf5oq6kngvtlp67f93m862esmu.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "661451733735-iqdrgfdtp81t2trn2517qai5bl6p00sc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bukuing"
+              }
             }
           ]
         }

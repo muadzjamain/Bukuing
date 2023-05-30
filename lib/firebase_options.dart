@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '661451733735',
     projectId: 'bukuing-application',
     authDomain: 'bukuing-application.firebaseapp.com',
+    databaseURL: 'https://bukuing-application-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'bukuing-application.appspot.com',
     measurementId: 'G-091L31ML2H',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:661451733735:android:4a33e0891f09e94b690042',
     messagingSenderId: '661451733735',
     projectId: 'bukuing-application',
+    databaseURL: 'https://bukuing-application-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'bukuing-application.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:661451733735:ios:c029010c67e151eb690042',
     messagingSenderId: '661451733735',
     projectId: 'bukuing-application',
+    databaseURL: 'https://bukuing-application-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'bukuing-application.appspot.com',
     androidClientId: '661451733735-fj9jkqgelg7vnhjhfr08aigs43m7jun2.apps.googleusercontent.com',
     iosClientId: '661451733735-iqdrgfdtp81t2trn2517qai5bl6p00sc.apps.googleusercontent.com',
@@ -77,6 +80,7 @@ class DefaultFirebaseOptions {
     appId: '1:661451733735:ios:c029010c67e151eb690042',
     messagingSenderId: '661451733735',
     projectId: 'bukuing-application',
+    databaseURL: 'https://bukuing-application-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'bukuing-application.appspot.com',
     androidClientId: '661451733735-fj9jkqgelg7vnhjhfr08aigs43m7jun2.apps.googleusercontent.com',
     iosClientId: '661451733735-iqdrgfdtp81t2trn2517qai5bl6p00sc.apps.googleusercontent.com',

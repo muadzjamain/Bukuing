@@ -17,7 +17,7 @@ class AppDrawer extends StatefulWidget {
 
 class _AppDrawer extends State<AppDrawer> {
   String imageUrl = 'https://i.imgur.com/g9070k1.jpg';
-  String userEmail = 'skjcnsac@gmail.com';
+  String userEmail = 'awie666@gmail.com';
 
   @override
   void initState() {
