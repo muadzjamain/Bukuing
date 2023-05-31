@@ -51,7 +51,7 @@ class _BookingHistoryWidgetState extends State<BookingHistoryWidget> {
     final db = FirebaseFirestore.instance;
 
 // Fetch data from firestore
-    final colRef = db.collection("booking");
+    final colRef = db.collection("bookings");
     final data = await colRef.get().then((doc) {
       final bookings = {};
       for (var docSnapshot in doc.docs) {
