@@ -64,6 +64,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
         'date': date,
         'start_time': startTime,
         'end_time': endTime,
+        'court': "Kompleks",
       });
 
       // Show a success message to the user
@@ -394,7 +395,7 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                                 ),
                                 keyboardType: TextInputType.datetime,
                                 validator: (value) => _model
-                                    .textController1Validator
+                                    .textController2Validator
                                     ?.call(context, value),
                               ),
                             ),
@@ -402,18 +403,14 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                           Expanded(
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 13, 0),
                               child: TextFormField(
                                 controller: textController3,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'End',
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
+                                  hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.white,
@@ -459,10 +456,15 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                style: TextStyle(),
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
                                 keyboardType: TextInputType.datetime,
                                 validator: (value) => _model
-                                    .textController1Validator
+                                    .textController3Validator
                                     ?.call(context, value),
                               ),
                             ),

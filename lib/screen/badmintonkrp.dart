@@ -16,6 +16,10 @@ class BadmintonKRPtWidget extends StatefulWidget {
 class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
   late BadmintonKRPModel _model;
 
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
+  TextEditingController textController3 = TextEditingController();
+
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
@@ -58,17 +62,20 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
             ),
             onPressed: () {
               print('IconButton pressed ...');
-              Navigator.push(context,MaterialPageRoute(builder: (context) => const BadmintonPageWidget()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BadmintonPageWidget()));
             },
           ),
           title: Text(
             'Badminton',
-                    style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
           actions: [],
           centerTitle: true,
@@ -124,14 +131,12 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                             child: Text(
                                               'KRP',
                                               textAlign: TextAlign.justify,
-                                              style:
-                                                  TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.white,
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              style: TextStyle(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -153,11 +158,11 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                           child: Text(
                             'Time & Date',
                             style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -170,11 +175,11 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                           Text(
                             'Date',
                             style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -194,7 +199,7 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                 obscureText: false,
                                 decoration: const InputDecoration(
                                   hintText: 'Date',
-                                  hintStyle: TextStyle(color:Colors.white),
+                                  hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.white,
@@ -241,12 +246,13 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                   ),
                                 ),
                                 style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
                                 keyboardType: TextInputType.datetime,
-                                validator: (value) => _model.textController1Validator
-                                ?.call(context, value),
+                                validator: (value) => _model
+                                    .textController1Validator
+                                    ?.call(context, value),
                               ),
                             ),
                           ),
@@ -264,11 +270,11 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                             child: Text(
                               'Time',
                               style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -289,7 +295,7 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'Start',
-                                  hintStyle: TextStyle(color:Colors.white),
+                                  hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.white,
@@ -336,32 +342,29 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                   ),
                                 ),
                                 style: TextStyle(
-                                      fontFamily: 'Montserrat',
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
                                 keyboardType: TextInputType.datetime,
-                                validator: (value) => _model.textController1Validator
-                                ?.call(context, value),
+                                validator: (value) => _model
+                                    .textController1Validator
+                                    ?.call(context, value),
                               ),
                             ),
                           ),
                           Expanded(
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 13, 0),
                               child: TextFormField(
-                                controller: _model.textController3,
+                                controller: textController3,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   hintText: 'End',
-                                  hintStyle: TextStyle(
-                                        fontFamily: 'Montserrat',
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                      ),
+                                  hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.white,
@@ -407,10 +410,16 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                style: TextStyle(),
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
                                 keyboardType: TextInputType.datetime,
-                                validator: (value) => _model.textController1Validator
-                                ?.call(context, value),
+                                validator: (value) => _model
+                                    .textController3Validator
+                                    ?.call(context, value),
                               ),
                             ),
                           ),
@@ -434,15 +443,22 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                           ElevatedButton(
                             onPressed: () {
                               print('Button pressed ...');
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => const ApprovePageWidget()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ApprovePageWidget()));
                             },
                             child: Text(
                               'Book',
-                              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .subtitle1!
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                             ),
                             style: ElevatedButton.styleFrom(
                               primary: Color(0xFFF7D46E),
