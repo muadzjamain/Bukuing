@@ -2,6 +2,9 @@ import 'package:bukuing/screen/approve.dart';
 import 'package:bukuing/screen/decline.dart';
 import 'package:bukuing/screen/badminton.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../model/badminton_krp_model.dart';
 export '../model/badminton_krp_model.dart';
@@ -23,6 +26,10 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
 
+  /// booking code
+  final GlobalKey<ScaffoldMessengerState> _scaffoldKey =
+      GlobalKey<ScaffoldMessengerState>();
+
   @override
   void initState() {
     super.initState();
@@ -32,6 +39,45 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
     _model.textController1 ??= TextEditingController();
     _model.textController2 ??= TextEditingController();
     _model.textController3 ??= TextEditingController();
+  }
+
+  Future<void> _saveBookingData() async {
+    // Get the values from the text controllers
+    String date = textController1.text;
+    String startTime = textController2.text;
+    String endTime = textController3.text;
+
+    print('1 book firestore btn pressed...');
+
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+    print('1.5 book firestore btn pressed...');
+
+    try {
+      // Create a Firestore instance
+      final firestore = FirebaseFirestore.instance;
+      print('2 book firestore btn pressed...');
+
+      // Create a new document in a 'bookings' collection and set the data
+      await firestore.collection('bookings').add({
+        'uid': user.uid,
+        'date': date,
+        'start_time': startTime,
+        'end_time': endTime,
+        'court': "Krp",
+      });
+
+      // Show a success message to the user
+      _scaffoldKey.currentState?.showSnackBar(
+        SnackBar(content: Text('Booking data saved to Firebase')),
+      );
+    } catch (e) {
+      // Show an error message to the user
+      print(e);
+      _scaffoldKey.currentState?.showSnackBar(
+        SnackBar(content: Text('Failed to save booking data')),
+      );
+    }
   }
 
   @override
@@ -194,7 +240,7 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(10, 0, 200, 0),
                               child: TextFormField(
-                                controller: _model.textController1,
+                                controller: textController1,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: const InputDecoration(
@@ -290,7 +336,7 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(10, 0, 13, 0),
                               child: TextFormField(
-                                controller: _model.textController2,
+                                controller: textController2,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -442,7 +488,7 @@ class _BookingCourtWidgetState extends State<BadmintonKRPtWidget> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              print('Button pressed ...');
+                              _saveBookingData(); // Call the save function when button is pressed
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

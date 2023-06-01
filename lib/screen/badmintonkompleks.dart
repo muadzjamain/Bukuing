@@ -487,8 +487,14 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed:
-                                _saveBookingData, // Call the save function when button is pressed
+                            onPressed: () {
+                              _saveBookingData(); // Call the save function when button is pressed
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ApprovePageWidget()));
+                            },
                             child: Text(
                               'Book',
                               style: Theme.of(context)
