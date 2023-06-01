@@ -52,29 +52,19 @@ class _BookingHistoryWidgetState extends State<BookingHistoryWidget> {
 
 // Fetch data from firestore
     final colRef = db.collection("bookings");
-    final data = await colRef.get().then((doc) {
-      final bookings = {};
+    final data =
+        await colRef.where('uid', isEqualTo: user.uid).get().then((doc) {
+      final bookings = [];
       for (var docSnapshot in doc.docs) {
-        bookings[docSnapshot.id] = docSnapshot.data();
+        bookings.add({'docId': docSnapshot.id, ...docSnapshot.data()});
       }
       return bookings;
     }).onError((error, stackTrace) {
       print("Error getting document: $error, $stackTrace");
-      return {};
+      return [];
     });
-// Check if data exists
-    if (data == null) return [];
 
-// else filter data to use current user id; ( return filtered; )
-    List bookings = data.values.where((element) {
-      Map booking = element as Map;
-      if (booking['uid'] == user.uid) {
-        return true;
-      }
-      return false;
-    }).toList();
-
-    return bookings;
+    return data;
   }
 
   @override
