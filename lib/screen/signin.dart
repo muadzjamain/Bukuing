@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../model/sign_in_model.dart';
+import 'homeadmin.dart';
 export '../model/sign_in_model.dart';
 
 class SignInWidget extends StatefulWidget {
@@ -221,11 +222,22 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 if (value.user == null) return;
                                 print(value.user!.emailVerified);
                                 if (value.user!.emailVerified) {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HomePageWidget()));
+                                  final bool emailAdminValid = RegExp(
+                                          r"^[A-Za-z0-9_\-.]+@(graduate).(utm).(my)")
+                                      .hasMatch(textController1.text);
+                                  if (emailAdminValid) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HomePageAdminWidget()));
+                                  } else {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HomePageWidget()));
+                                  }
                                 } else {
                                   showAlertDialog(context);
                                   value.user!.sendEmailVerification();
