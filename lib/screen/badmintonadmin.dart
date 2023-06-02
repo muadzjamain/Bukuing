@@ -58,7 +58,7 @@ class _BadmintonPageWidgetState extends State<BadmintonadminWidget> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const HomePageWidget()));
+                      builder: (context) => const HomePageAdminWidget()));
             },
           ),
           title: Text(

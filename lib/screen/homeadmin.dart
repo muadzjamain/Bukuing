@@ -6,14 +6,14 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../model/home_page_model.dart';
 export '../model/home_page_model.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class HomePageAdminWidget extends StatefulWidget {
+  const HomePageAdminWidget({Key? key}) : super(key: key);
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _HomePageWidgetState extends State<HomePageAdminWidget> {
   late HomePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -443,34 +443,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(0, 0, 10, 10),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('IconButton pressed ...');
-                          },
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                  color: Colors.transparent, width: 1),
-                              color: Colors.white,
-                            ),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 30,
-                            ),
-                          ),
+                      Text(
+                        'Admin',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                          fontSize: 25,
                         ),
                       ),
                     ],
-                  ),
+                  )
                 ],
               )
             ],
