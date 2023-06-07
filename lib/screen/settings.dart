@@ -14,6 +14,8 @@ class SettingsWidget extends StatefulWidget {
 
 class _SettingsWidgetState extends State<SettingsWidget> {
   late SettingsModel _model;
+  String imageUrl = 'https://i.imgur.com/g9070k1.jpg';
+  String userEmail = 'awie666@gmail.com';
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -32,6 +34,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textController3 ??= TextEditingController();
     _model.textController4 ??= TextEditingController();
+
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+    imageUrl = user.photoURL ?? imageUrl;
+    userEmail = user.email ?? userEmail;
   }
 
   @override
@@ -117,8 +124,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
-                        child: Image.asset(
-                          'images/dp1.jpg',
+                        child: Image.network(
+                          imageUrl,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -150,7 +157,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'awiecomeii@gmail.com',
+                                  hintText: userEmail,
                                   hintStyle: TextStyle(
                                     fontFamily: 'Montserrat',
                                     color: Colors.white,
