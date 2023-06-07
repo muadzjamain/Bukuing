@@ -94,7 +94,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    await Navigator.push(
+                                                    /* await Navigator.push(
                                                       context,
                                                       PageTransition(
                                                         type: PageTransitionType
@@ -108,7 +108,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                                         //useHeroAnimation:
                                                         //true,
                                                       ),
-                                                    );
+                                                    ); */
                                                   },
                                                   child: Hero(
                                                     tag: 'imageTag2',
@@ -147,7 +147,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await Navigator.push(
+                                            /* await Navigator.push(
                                               context,
                                               PageTransition(
                                                 type: PageTransitionType.fade,
@@ -181,7 +181,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                                 //useHeroAnimation:
                                                 //true,
                                               ),
-                                            );
+                                            ); */
                                           },
                                           child: Hero(
                                             tag: 'imageTag3',
@@ -209,7 +209,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            await Navigator.push(
+                                            /*    await Navigator.push(
                                               context,
                                               PageTransition(
                                                   type: PageTransitionType.fade,
@@ -254,7 +254,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                                 //useHeroAnimation:
                                                 //true,
                                               ),
-                                            );
+                                            ); */
                                           },
                                           child: Hero(
                                             tag: 'imageTag4',
