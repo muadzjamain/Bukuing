@@ -1,5 +1,5 @@
 import 'package:bukuing/screen/badmintonadmin.dart';
-import 'package:bukuing/screen/appdrawer.dart';
+import 'package:bukuing/screen/draweradmin.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
