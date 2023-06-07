@@ -1,6 +1,7 @@
 import 'package:bukuing/screen/homepage.dart';
 import 'package:bukuing/screen/forgot.dart';
 import 'package:bukuing/screen/signup.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -218,10 +219,25 @@ class _SignInWidgetState extends State<SignInWidget> {
                                   .signInWithEmailAndPassword(
                                       email: textController1.text,
                                       password: textController2.text)
-                                  .then((value) {
+                                  .then((value) async {
                                 if (value.user == null) return;
                                 print(value.user!.emailVerified);
                                 if (value.user!.emailVerified) {
+                                  final db = FirebaseFirestore.instance;
+                                  final userSnapshot = await db
+                                      .collection('users')
+                                      .doc(value.user?.uid)
+                                      .get();
+                                  final data = userSnapshot.data();
+                                  if (data == null) {
+                                    await db
+                                        .collection('users')
+                                        .doc(value.user?.uid)
+                                        .set({
+                                      'uid': value.user?.uid,
+                                      'email': value.user?.email,
+                                    });
+                                  }
                                   final bool emailAdminValid = RegExp(
                                           r"^[A-Za-z0-9_\-.]+@(graduate).(utm).(my)")
                                       .hasMatch(textController1.text);

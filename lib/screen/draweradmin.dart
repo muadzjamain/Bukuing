@@ -1,8 +1,8 @@
-import 'package:bukuing/screen/contact.dart';
-import 'package:bukuing/screen/profile.dart';
-import 'package:bukuing/screen/settings.dart';
+import 'package:bukuing/screen/contactadmin.dart';
+import 'package:bukuing/screen/profileadmin.dart';
+import 'package:bukuing/screen/settingadmin.dart';
 import 'package:bukuing/screen/homeadmin.dart';
-import 'package:bukuing/screen/bookinghistory.dart';
+import 'package:bukuing/screen/bookinghistoryadmin.dart';
 import 'package:bukuing/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -174,7 +174,7 @@ class _AppDrawer extends State<AppDrawer> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const BookingHistoryWidget()));
+                                          const BookingHistoryadminWidget()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0x003474E0),

@@ -1,4 +1,5 @@
 import 'package:bukuing/screen/signin.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -203,8 +204,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 email: textController1.text,
                                 password: textController3.text,
                               )
-                                  .then((value) {
+                                  .then((value) async {
                                 print("create New Account");
+                                final db = FirebaseFirestore.instance;
+                                await db
+                                    .collection('users')
+                                    .doc(value.user?.uid)
+                                    .set({
+                                  'uid': value.user?.uid,
+                                  'email': value.user?.email,
+                                });
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
