@@ -340,7 +340,7 @@ class _BookingCourtWidgetState extends State<Badmintonk9Widget> {
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Start',
+                                  hintText: 'Start (##:##)',
                                   hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
@@ -409,7 +409,7 @@ class _BookingCourtWidgetState extends State<Badmintonk9Widget> {
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'End',
+                                  hintText: 'End (##:##)',
                                   hintStyle: TextStyle(color: Colors.white),
                                   enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(

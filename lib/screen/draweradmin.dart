@@ -1,7 +1,7 @@
 import 'package:bukuing/screen/contact.dart';
 import 'package:bukuing/screen/profile.dart';
 import 'package:bukuing/screen/settings.dart';
-import 'package:bukuing/screen/homepage.dart';
+import 'package:bukuing/screen/homeadmin.dart';
 import 'package:bukuing/screen/bookinghistory.dart';
 import 'package:bukuing/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -77,14 +77,6 @@ class _AppDrawer extends State<AppDrawer> {
                       ),
                     ),
                     Text(
-                      'Awieknd',
-                      style: const TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Colors.white,
-                        fontSize: 22,
-                      ),
-                    ),
-                    Text(
                       userEmail,
                       style: const TextStyle(
                         fontFamily: 'Montserrat',
@@ -119,7 +111,8 @@ class _AppDrawer extends State<AppDrawer> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePageWidget()));
+                                builder: (context) =>
+                                    const HomePageAdminWidget()));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0x003474E0),
