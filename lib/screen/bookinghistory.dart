@@ -209,7 +209,10 @@ class _BookingHistoryWidgetState extends State<BookingHistoryWidget> {
                                                 ),
                                               ),
                                               Text(
-                                                '(Sport Excellence)',
+                                                ' (' +
+                                                    snapshot.data?[index]
+                                                        ['court'] +
+                                                    ')',
                                                 style: TextStyle(
                                                   fontFamily: 'Montserrat',
                                                   color: Colors.white,

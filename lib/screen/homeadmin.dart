@@ -1,4 +1,4 @@
-import 'package:bukuing/screen/badminton.dart';
+import 'package:bukuing/screen/badmintonadmin.dart';
 import 'package:bukuing/screen/appdrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -335,7 +335,7 @@ class _HomePageWidgetState extends State<HomePageAdminWidget> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const BadmintonPageWidget()));
+                                                const BadmintonadminWidget()));
                                   },
                                   child: Container(
                                     width: MediaQuery.of(context).size.width,
