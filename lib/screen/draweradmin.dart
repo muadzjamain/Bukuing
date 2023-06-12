@@ -2,7 +2,7 @@ import 'package:bukuing/screen/contactadmin.dart';
 import 'package:bukuing/screen/profileadmin.dart';
 import 'package:bukuing/screen/settingadmin.dart';
 import 'package:bukuing/screen/homeadmin.dart';
-import 'package:bukuing/screen/bookinghistoryadmin.dart';
+
 import 'package:bukuing/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -146,7 +146,7 @@ class _AppDrawer extends State<AppDrawer> {
                 ],
               ),
             ),
-            Padding(
+            /*  Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
@@ -164,7 +164,7 @@ class _AppDrawer extends State<AppDrawer> {
                             size: 35,
                           ),
                         ),
-                        Padding(
+                        /* Padding(
                           padding:
                               const EdgeInsetsDirectional.fromSTEB(14, 0, 0, 0),
                           child: ElevatedButton(
@@ -203,13 +203,13 @@ class _AppDrawer extends State<AppDrawer> {
                               ),
                             ),
                           ),
-                        ),
+                        ), */
                       ],
                     ),
                   ),
                 ],
               ),
-            ),
+            ), */
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
               child: Row(
