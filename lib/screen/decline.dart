@@ -1,4 +1,6 @@
 import 'package:bukuing/screen/badmintonkompleks.dart';
+import 'package:bukuing/screen/badmintonk9.dart';
+import 'package:bukuing/screen/badmintonkrp.dart';
 import 'package:bukuing/screen/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -67,11 +69,11 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
           title: Text(
             'Badminton',
             style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+              fontFamily: 'Montserrat',
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           actions: [],
           centerTitle: true,
@@ -125,7 +127,9 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
                                                   0, 20, 0, 0),
                                           child: Icon(
                                             Icons.cancel_outlined,
-                                            color: Theme.of(context).colorScheme.error,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .error,
                                             size: 150,
                                           ),
                                         ),
@@ -137,9 +141,9 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
                                             'Ooppss !',
                                             textAlign: TextAlign.start,
                                             style: TextStyle(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 24,
-                                                ),
+                                              fontFamily: 'Montserrat',
+                                              fontSize: 24,
+                                            ),
                                           ),
                                         ),
                                         Padding(
@@ -149,7 +153,9 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
                                           child: Text(
                                             'Your booking has been declined !',
                                             textAlign: TextAlign.center,
-                                            style: Theme.of(context).textTheme.bodyText2,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyText2,
                                           ),
                                         ),
                                         Padding(
@@ -159,15 +165,22 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
                                           child: ElevatedButton(
                                             onPressed: () {
                                               print('Button pressed ...');
-                                              Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePageWidget()));
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const HomePageWidget()));
                                             },
                                             child: Text(
                                               'Retry',
-                                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                                fontFamily: 'Montserrat',
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyLarge!
+                                                  .copyWith(
+                                                    fontFamily: 'Montserrat',
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                             ),
                                             style: ElevatedButton.styleFrom(
                                               primary: Color(0xFFF7D46E),
@@ -175,7 +188,8 @@ class _DeclinePageWidgetState extends State<DeclinePageWidget> {
                                               padding: EdgeInsets.zero,
                                               minimumSize: Size(150, 40),
                                               shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(8),
+                                                borderRadius:
+                                                    BorderRadius.circular(8),
                                               ),
                                               side: BorderSide(
                                                 color: Colors.transparent,

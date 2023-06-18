@@ -487,13 +487,94 @@ class _BookingCourtWidgetState extends State<BadmintonKompleksWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {
-                              _saveBookingData(); // Call the save function when button is pressed
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ApprovePageWidget()));
+                            onPressed: () async {
+                              final db = FirebaseFirestore.instance;
+                              final bookingRef = db
+                                  .collection("bookings")
+                                  .where('court', isEqualTo: 'Kompleks');
+                              final snapbooking = await bookingRef.get();
+                              final exampleDB = snapbooking.docs
+                                  .map((e) => e.data())
+                                  .toList();
+
+                              // Example data for the user want to book
+                              final bookingDate = textController1.text;
+                              final bookingStart = textController2.text;
+                              final bookingEnd = textController3.text;
+                              final bookingDateSplitted =
+                                  bookingDate.split('/').map((d) {
+                                return int.parse(d);
+                              }).toList();
+                              final bookingStartNumbered =
+                                  int.parse(bookingStart.split(':').join(''));
+                              final bookingEndNumbered =
+                                  int.parse(bookingEnd.split(':').join(''));
+
+                              final isBooked = exampleDB
+                                  .map((d) {
+                                    final bookedDate = d['date'];
+                                    final bookedStart = d['start_time'];
+                                    final bookedEnd = d['end_time'];
+
+                                    // Check if data is null
+                                    if (bookedDate == null ||
+                                        bookedStart == null ||
+                                        bookedEnd == null) return false;
+
+                                    final bookedDateSplitted =
+                                        bookedDate.split('/').map((d) {
+                                      return int.parse(d);
+                                    }).toList();
+                                    final bookedStartNumbered = int.parse(
+                                        bookedStart.split(':').join(''));
+                                    final bookedEndNumbered = int.parse(
+                                        bookedEnd.split(':').join(''));
+
+                                    // Check the current Date
+                                    if (bookedDateSplitted[0] ==
+                                                bookingDateSplitted[
+                                                    0] && // Check day
+                                            bookedDateSplitted[1] ==
+                                                bookingDateSplitted[
+                                                    1] && // Check month
+                                            bookedDateSplitted[2] ==
+                                                bookingDateSplitted[
+                                                    2] // Check year
+                                        ) {
+                                      // Check the current time
+                                      if ((bookingStartNumbered >=
+                                                  bookedStartNumbered &&
+                                              bookingStartNumbered <
+                                                  bookedEndNumbered) ||
+                                          (bookingEndNumbered >
+                                                  bookedStartNumbered &&
+                                              bookingEndNumbered <=
+                                                  bookedEndNumbered)) {
+                                        return true;
+                                      }
+                                    }
+
+                                    return false;
+                                  })
+                                  .toList()
+                                  .contains(true);
+
+                              if (isBooked) {
+                                print('Already Booked');
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DeclinePageWidget()));
+                              } else {
+                                print('Success Booked');
+                                _saveBookingData(); // Call the save function when button is pressed
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ApprovePageWidget()));
+                              }
                             },
                             child: Text(
                               'Book',
