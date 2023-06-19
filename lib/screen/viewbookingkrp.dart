@@ -211,6 +211,9 @@ class _BookingHistoryWidgetState extends State<BookingKrpWidget> {
                                                       '(' +
                                                           snapshot.data?[index]
                                                               ['start_time'] +
+                                                          '-' +
+                                                          snapshot.data?[index]
+                                                              ['end_time'] +
                                                           ')',
                                                       style: TextStyle(
                                                         fontFamily: 'Poppins',
