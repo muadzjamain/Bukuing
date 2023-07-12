@@ -530,6 +530,8 @@ class _BookingCourtWidgetState extends State<Badmintonk9Widget> {
                                     final bookedEndNumbered = int.parse(
                                         bookedEnd.split(':').join(''));
 
+                                    /////////////////////////////////////////////////
+
                                     // Check the current Date
                                     if (bookedDateSplitted[0] ==
                                                 bookingDateSplitted[
